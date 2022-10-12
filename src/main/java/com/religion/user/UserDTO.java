@@ -19,6 +19,16 @@ public class UserDTO {
 	@Column(length = 500, nullable = false)
 	private String userId;
 	
+	@Column(length = 500, nullable = false)
 	private String userName;
+	
+	@Column(length = 500, nullable = false)
+	private String userAddress;
+	
+	@Column(length = 500, nullable = false)
+	private String userReligion;
+	
+	@Column(length = 500, nullable = false)
+	private String userPhone;
 	
 }
