@@ -31,4 +31,6 @@ public class UserDTO {
 	@Column(length = 500, nullable = false)
 	private String userPhone;
 	
+	
+	
 }

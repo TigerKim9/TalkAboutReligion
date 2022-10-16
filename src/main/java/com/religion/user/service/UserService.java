@@ -11,7 +11,8 @@ public class UserService {
 	UserMapper umapper;
 	
 	public int registUser(UserDTO user) {
-		user
+		int result = umapper.registUser(user);
+		return result;
 	}
 	
 }
