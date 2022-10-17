@@ -5,16 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Entity;
-
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@Builder
-public class UserDTO {
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +18,7 @@ public class UserDTO {
 	
 	@Column(length = 500, nullable = false)
 	private String userId;
-
+	
 	@Column(length = 500, nullable = false)
 	private String userPassword;
 	
