@@ -1,5 +1,8 @@
 package com.religion.config;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,6 +20,7 @@ import com.religion.user.service.UserService;
 @Service
 public class PrincipalDetailsService implements UserDetailsService{
 
+	Logger loggger = LoggerFactory.getLogger(PrincipalDetailsService.class);
 	@Autowired
 	private UserService userService;
 	
@@ -24,7 +28,8 @@ public class PrincipalDetailsService implements UserDetailsService{
 	// 시큐리티 sesssion (<= Authentication(<= 리턴된 UserDetails))
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		System.out.println("loadUserByUsername(" + username + ")");
+//		System.out.println("loadUserByUsername(" + username + ")");
+		loggger.info("loadUserByUsername({})", username);
 		
 		User user = userService.findById(username);
 		
