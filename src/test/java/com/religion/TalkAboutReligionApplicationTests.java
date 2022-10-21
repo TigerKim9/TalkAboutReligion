@@ -8,6 +8,7 @@ class TalkAboutReligionApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("Test Start");
 	}
 
 }
