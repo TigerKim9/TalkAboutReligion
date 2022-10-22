@@ -34,9 +34,9 @@ class TalkAboutReligionApplicationTests {
 						"(wr_subject, wr_content, wr_name, wr_viewcnt) " +
 						"VALUES(?, ?, ?, ?)";	
 		
-		public static final String [] SUBJECTS = {"천조국 근황", "대륙 클라스", "섬나라 일상", "카레국 근황"};
-		public static final String [] CONTENTS = {"ㅎㅎㅎ", "하하하", "호호호호", "깔깔깔", "껄껄껄"};
-		public static final String [] NAMES = {"상빈", "윤호", "은총", "요셉", "은수"};
+		public static final String [] SUBJECTS = {};
+		public static final String [] CONTENTS = {};
+		public static final String [] NAMES = {};
 		
 		@Test
 		void test() {
