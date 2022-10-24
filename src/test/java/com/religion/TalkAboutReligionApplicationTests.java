@@ -50,7 +50,7 @@ class TalkAboutReligionApplicationTests {
 				Class.forName(DRIVER);
 				conn = DriverManager.getConnection(URL, USERID, USERPW);
 				
-				// 테스트용 dummy 데이터 만들기
+				 dummy 데이터 만들기
 				pstmt = conn.prepareStatement(SQL_WRITE_INSERT);
 				
 				int num = 300; // 다량의 데이터
