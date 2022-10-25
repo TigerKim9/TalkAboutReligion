@@ -11,14 +11,12 @@ import java.util.Random;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.mysql.cj.xdevapi.Statement;
-
 @SpringBootTest
 class TalkAboutReligionApplicationTests {
 
 	// JDBC 관련 기본 객체 변수들 선언
 		Connection conn = null;
-		Statement stmt = null;
+//		Statement stmt = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;   // executeQuery(), SELECT 결과 
 		int cnt = 0;           // executeUpdate(), DML 결과	
@@ -50,7 +48,7 @@ class TalkAboutReligionApplicationTests {
 				Class.forName(DRIVER);
 				conn = DriverManager.getConnection(URL, USERID, USERPW);
 				
-				 dummy 데이터 만들기
+				// dummy 데이터 만들기
 				pstmt = conn.prepareStatement(SQL_WRITE_INSERT);
 				
 				int num = 300; // 다량의 데이터
