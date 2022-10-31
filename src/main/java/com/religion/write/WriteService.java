@@ -26,6 +26,7 @@ public class WriteService {
 		return result;
 	}
 	
+	//글 삭제
 	public int deleteWrite(WriteDTO writeDTO) {
 		
 		int result = writeMapper.deleteWrite(writeDTO);
@@ -33,6 +34,7 @@ public class WriteService {
 		return result;
 	}
 	
+	//글 수정
 	public int updateWrite(WriteDTO writeDTO) {
 		int result = writeMapper.updateWrite(writeDTO);
 		return result;
