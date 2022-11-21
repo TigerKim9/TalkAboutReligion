@@ -48,6 +48,10 @@ public class PrincipalDetails implements UserDetails{
 		return collect;
 	}
 
+	public User getUser() {
+		return user;
+	}
+	
 	@Override
 	public String getPassword() {
 		return user.getUserPassword();
