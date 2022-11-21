@@ -47,6 +47,7 @@ public class UserService {
 	public User findById(String id) {
 		//검색기록
 		umapper.searchLog(id);
+		//TODO 검색기록내용 추가하기
 		return umapper.findById(id);
 	}
 	

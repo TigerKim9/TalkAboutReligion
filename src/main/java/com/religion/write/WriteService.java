@@ -30,7 +30,7 @@ public class WriteService {
 	public int deleteWrite(WriteDTO writeDTO) {
 		
 		int result = writeMapper.deleteWrite(writeDTO);
-		
+		//TODO 삭제기록 넣기
 		return result;
 	}
 	
