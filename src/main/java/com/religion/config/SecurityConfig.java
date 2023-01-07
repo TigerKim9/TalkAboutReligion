@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -14,9 +13,6 @@ import com.religion.user.User;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig{
-	
-	
-	public PasswordEncoder passwordEncoder;
 	
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -32,12 +28,13 @@ public class SecurityConfig{
 
     @Bean
     public InMemoryUserDetailsManager userDetailsService() {
-        UserDetails user = User.builder()
-                .userName("user")
-                .userPassword("password")
+        UserDetails user = User
+                .username("user")
+                .password("password")
+                .roles("USER")
                 .build();
 
-        UserDetails user2 = User.withDefaultPasswordEncoder()
+        UserDetails user2 = User
                 .username("user2")
                 .password("password2")
                 .roles("USER")
