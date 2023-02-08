@@ -23,7 +23,7 @@ class TalkAboutReligionApplicationTests {
 		
 		// MySQL
 		public static final String DRIVER = "com.mysql.cj.jdbc.Driver";  // JDBC 드라이버 클래스
-		public static final String URL = "jdbc:mysql://localhost:3306/mydb720";  // DB 서버 정보
+		public static final String URL = "jdbc:mysql://localhost:3306/{DB이름}";  // DB 서버 정보
 		public static final String USERID = "myuser720";   // DB 사용자 계정 정보
 		public static final String USERPW = "1234";
 
