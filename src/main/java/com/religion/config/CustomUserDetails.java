@@ -11,47 +11,46 @@ import com.religion.user.User;
 import com.religion.user.UserDTO;
 import com.religion.user.service.UserService;
 
-public class PrincipalDetails implements UserDetails{
+public class CustomUserDetails implements UserDetails {
 
 	private UserService userService;
+
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
 
 	private User user;
-	
-	public PrincipalDetails(User user) {
+
+	public CustomUserDetails(User user) {
 		System.out.println("PrincipalDetails(user) 생성: " + user);
 		this.user = user;
 	}
-	
-	
-	
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		System.out.println("getAuthorities() 호출");
-		
+
 		Collection<GrantedAuthority> collect = new ArrayList<>();
-		
+
 		List<String> list = userService.selectAuthoritiesById(user.getUserPid());
-		
-		for(String auth : list) {
+
+		for (String auth : list) {
 			collect.add(new GrantedAuthority() {
-				
+
 				@Override
 				public String getAuthority() {
 					return auth;
 				}
 			});
-		}		
-		
+		}
+
 		return collect;
 	}
 
 	public User getUser() {
 		return user;
 	}
-	
+
 	@Override
 	public String getPassword() {
 		return user.getUserPassword();
@@ -86,17 +85,8 @@ public class PrincipalDetails implements UserDetails{
 		return true;
 		// ex)
 		// 사이트에서 1년동안 회원이 로그인을 안하면 휴면계정으로 하기로 했다면?
-		// 현재시간 - 로그인시간 => 1년을 초과하면 false  
+		// 현재시간 - 로그인시간 => 1년을 초과하면 false
 	}
 
+
 }
-
-
-
-
-
-
-
-
-
-

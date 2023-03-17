@@ -18,9 +18,9 @@ import com.religion.user.service.UserService;
 //위 url 로 요청이 오면 자동으로 UserDetailsService 타입으로 IoC 되어 있는
 //loadUserByUsername() 가 실행된다.
 @Service
-public class PrincipalDetailsService implements UserDetailsService{
+public class CustomUserDetailsService implements UserDetailsService{
 
-	Logger loggger = LoggerFactory.getLogger(PrincipalDetailsService.class);
+	Logger loggger = LoggerFactory.getLogger(CustomUserDetailsService.class);
 	@Autowired
 	private UserService userService;
 	
@@ -35,7 +35,7 @@ public class PrincipalDetailsService implements UserDetailsService{
 		
 		// 해당 id 의 user 가 있다면
 		if(user != null) {
-			PrincipalDetails userDetails = new PrincipalDetails(user);
+			CustomUserDetails userDetails = new CustomUserDetails(user);
 			userDetails.setUserService(userService);
 			return userDetails;
 		}

@@ -1,24 +1,21 @@
 package com.religion.user.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.religion.user.User;
 import com.religion.user.service.UserService;
 
-@Controller
+@RestController
 public class UserAPIController {
 	
 	UserService userService;
 	
-	@GetMapping("/login")
-	public String loginPage(User user) {
-		return "home";
-	}
-	@GetMapping("regist")
-	public String sign_up(User user) {
-		return "sign_up";
+	
+	@PostMapping("regist")
+	public int sign_up(User user) {
+		int result = userService.addMember(user);
+		return result;
 	}
 
 }

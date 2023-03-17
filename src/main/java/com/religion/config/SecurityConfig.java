@@ -13,6 +13,7 @@ import com.religion.user.User;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig{
+	private CustomUserDetailsService customUserDetailsService;
 	
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -21,26 +22,38 @@ public class SecurityConfig{
                 .hasRole("USER")
                 .antMatchers("/","/**").permitAll()
                 .and()
-                .httpBasic();
+                .httpBasic()
+                .and()
+                .formLogin()
+				.loginPage("/login")
+				.usernameParameter("userid")
+				.passwordParameter("userpassword")
+				.loginProcessingUrl("/loginOk")
+				.defaultSuccessUrl("/")
+				.and()
+				.rememberMe()
+				.key("secret")
+				.rememberMeParameter("autoLogin")
+				.tokenValiditySeconds(86400)
+				.userDetailsService(customUserDetailsService)
+				.and()
+				.logout()
+				.logoutUrl("/logout")
+				.invalidateHttpSession(true)
+                ;
 
         return http.build();
     }
 
-    @Bean
-    public InMemoryUserDetailsManager userDetailsService() {
-        UserDetails user = User
-                .username("user")
-                .password("password")
-                .roles("USER")
-                .build();
-
-        UserDetails user2 = User
-                .username("user2")
-                .password("password2")
-                .roles("USER")
-                .build();
-        return new InMemoryUserDetailsManager(user, user2);
-    }
+//    @Bean
+//    public InMemoryUserDetailsManager userDetailsService() {
+//        UserDetails user = CustomUserDetails
+//                .getUsername()
+//                .getPassword()
+//                .build();
+//
+//        return new InMemoryUserDetailsManager(user);
+//    }
 
 //	// PasswordEncoder 를 bean 으로 IoC 에 등록
 //		@Bean
