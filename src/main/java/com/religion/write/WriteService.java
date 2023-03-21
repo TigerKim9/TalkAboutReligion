@@ -31,6 +31,7 @@ public class WriteService {
 		
 		int result = writeMapper.deleteWrite(writeDTO);
 		//TODO 삭제기록 넣기
+		writeMapper.deleteRecord(writeDTO);
 		return result;
 	}
 	

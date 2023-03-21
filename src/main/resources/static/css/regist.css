@@ -1,0 +1,14 @@
+.wrapper{
+    align-content: center;
+    text-align: center;
+    
+}
+
+.contents_box{
+    position: inherit;
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+    text-align: left;
+    border: 10px;
+}

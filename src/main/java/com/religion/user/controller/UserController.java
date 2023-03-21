@@ -16,9 +16,12 @@ public class UserController {
 	public String loginPage(User user) {
 		return "home";
 	}
-	@GetMapping("regist")
+	
+	@GetMapping("/regist")
 	public String sign_up(User user) {
-		return "sign_up";
+		return "regist";
 	}
 
 }
+
+

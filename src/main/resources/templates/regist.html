@@ -1,20 +1,25 @@
-
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/sign_up.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-    <title>파이트 회원가입</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <link rel="stylesheet" href="/css/regist.css"/>
+    	<title>파이트 회원가입</title>
 </head>
 
 <body>
+    <div class="wrapper">
+
+    
 <h1>파이트 회원가입</h1>
  <!-- <form action="/" class="frm" method="POST"> -->
-        <label for="input_id">아이디</label>
+    
+    <div class="contents_box">
+
+    
+    <label for="input_id">아이디</label>
         <input type="text" id="input_id" name="userid" placeholder="아이디 입력">
         <button type="button" class="id_check">중복확인</button>
         <br>
@@ -52,7 +57,9 @@
         <!-- </form> -->
         <marquee scrollamount="20" behavior="alternate" width="200px">회원가입 해~</marquee>
         <a href="accFind">ID / 비밀번호 찾기</a>
-</body>
+    </div>   
+    </div>
+    </body>
 <script type="text/javascript">
 
      const inputId = $('input[name=userid]');

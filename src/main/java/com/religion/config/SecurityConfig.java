@@ -18,8 +18,8 @@ public class SecurityConfig{
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/design","orders")
-                .hasRole("USER")
+//                .antMatchers("/design","orders")
+//                .hasRole("USER")
                 .antMatchers("/","/**").permitAll()
                 .and()
                 .httpBasic()
