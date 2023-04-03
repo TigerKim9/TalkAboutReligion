@@ -21,6 +21,26 @@ public class UserController {
 	public String sign_up(User user) {
 		return "regist";
 	}
+	
+	@GetMapping("/about")
+	public String about(User user) {
+		return "About";
+	}
+	
+	@GetMapping("/contact")
+	public String contact(User user) {
+		return "Contact";
+	}
+
+	@GetMapping("/Home")
+	public String home(User user) {
+		return "Home";
+	}
+	
+	@GetMapping("/index")
+	public String indext(User user) {
+		return "index";
+	}
 
 }
 
