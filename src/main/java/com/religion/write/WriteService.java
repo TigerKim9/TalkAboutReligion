@@ -17,9 +17,7 @@ public class WriteService {
 	public int write(
 			WriteDTO writeDTO
 			,@AuthenticationPrincipal CustomUserDetails user) {
-		if(user == null) {
-			return 0;
-		}
+		if(user == null) {return 0;}
 		writeDTO.setUserName(user.getUsername());
 		int result = writeMapper.write(writeDTO);
 		
@@ -30,7 +28,6 @@ public class WriteService {
 	public int deleteWrite(WriteDTO writeDTO) {
 		
 		int result = writeMapper.deleteWrite(writeDTO);
-		//TODO 삭제기록 넣기
 		writeMapper.deleteRecord(writeDTO);
 		return result;
 	}
@@ -38,6 +35,7 @@ public class WriteService {
 	//글 수정
 	public int updateWrite(WriteDTO writeDTO) {
 		int result = writeMapper.updateWrite(writeDTO);
+		writeMapper.updateRecord(writeDTO);
 		return result;
 	}
 }

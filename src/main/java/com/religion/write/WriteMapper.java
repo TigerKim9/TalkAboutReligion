@@ -22,10 +22,14 @@ public interface WriteMapper {
 	//글 삭제
 	int deleteWrite(WriteDTO writeDTO);
 	
+	//글 삭제 기록
 	int deleteRecord(WriteDTO writeDTO);
 	
 	//글 수정
 	int updateWrite(WriteDTO writeDTO);
+	
+	//글 수정 기록
+	int updateRecord(WriteDTO writeDTO);
 	
 	
 }

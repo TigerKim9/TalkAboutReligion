@@ -3,6 +3,7 @@ package com.religion.user.service;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 import com.religion.user.User;
 
@@ -32,6 +33,7 @@ public interface UserMapper {
 	User findById(String id);
 	
 	// 특정 id (username) 의 권한(들) 뽑기
+	@Select("SELECT * FROM t_student WHERE studno=#{studno}")
 	List<String> selectAuthoritiesById(Long userId);
 	
 	//아이디 검색기록

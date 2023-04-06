@@ -43,6 +43,7 @@ public class UserService {
 		return cnt;
 	}
 	
+	// 회원정보 조회
 	// 특정 id(username) 의 정보 가져오기
 	public User findById(String id) {
 		//검색기록
