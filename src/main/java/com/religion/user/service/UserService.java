@@ -48,7 +48,7 @@ public class UserService {
 	public User findById(String id) {
 		//검색기록
 		umapper.searchLog(id);
-		//TODO 검색기록내용 추가하기
+		//TODO 검색기록내용 추가하기 INSERT INTO 누가 무엇을 언제 검색했는가?
 		return umapper.findById(id);
 	}
 	
