@@ -23,4 +23,6 @@ public class WriteDTO {
 	
 	//평점
 	private int rank;
+	
+	
 }

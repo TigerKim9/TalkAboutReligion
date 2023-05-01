@@ -8,4 +8,5 @@ import com.religion.user.User;
 
 public interface UserJpaRepository extends JpaRepository<User, Long> {
     List<User> findAllByUserPid(Long userPid);
+    
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.religion.user.User;
+import com.religion.write.Write;
 
 import lombok.RequiredArgsConstructor;
 
@@ -15,6 +16,7 @@ public class UserService {
 
 	User user;
 	UserMapper umapper;
+	Write write;
 	
 	
 	//중복아이디 체크
@@ -49,6 +51,7 @@ public class UserService {
 		//검색기록
 		umapper.searchLog(id);
 		//TODO 검색기록내용 추가하기 INSERT INTO 누가 무엇을 언제 검색했는가?
+		
 		return umapper.findById(id);
 	}
 	
