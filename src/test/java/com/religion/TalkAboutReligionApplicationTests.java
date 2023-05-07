@@ -17,7 +17,7 @@ class TalkAboutReligionApplicationTests {
 		
 		@Test
 		void genData() {
-		
+			assertThat();
 		}
 
 }
