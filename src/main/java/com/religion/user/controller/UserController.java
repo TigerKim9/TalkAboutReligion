@@ -1,8 +1,8 @@
 package com.religion.user.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.religion.user.User;
 import com.religion.user.service.UserService;
@@ -33,7 +33,9 @@ public class UserController {
 	}
 
 	@GetMapping("/Home")
-	public String home(User user) {
+	public String home(User user, Model model) {
+		
+		model.addAttribute("Title","yes");
 		return "Home";
 	}
 	

@@ -1,5 +1,7 @@
 package com.religion.write;
 
+import java.util.List;
+
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,13 @@ public class WriteService {
 		
 		return result;
 	}
+	//글 조회
+	public List<WriteDTO> viewWrite() {
+		
+		List<WriteDTO> result = writeMapper.viewWrite();
+		
+		return result;
+	}
 	
 	//글 삭제
 	public int deleteWrite(WriteDTO writeDTO) {
@@ -31,6 +40,7 @@ public class WriteService {
 		writeMapper.deleteRecord(writeDTO);
 		return result;
 	}
+	
 	
 	//글 수정
 	public int updateWrite(WriteDTO writeDTO) {

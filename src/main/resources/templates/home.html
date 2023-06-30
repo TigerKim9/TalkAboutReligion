@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
+<html style="font-size: 16px;" lang="en">
+  <html xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Our work transforms businesses, INTUITIVE, Our work transforms businesses">
@@ -80,13 +82,13 @@
                 <th class="u-grey-80 u-table-cell u-table-cell-5">Column 5</th>
               </tr>
             </thead>
-            <tbody class="u-table-body">
+            <tbody th:each="list : ${lists}" class="u-table-body">
               <tr>
-                <td class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">Item #1</td>
-                <td class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">Discount:</td>
-                <td class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">$1.00</td>
-                <td class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">$ 0.10</td>
+                <td th:text="|list.pid}|" class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">Item #1</td>
+                <td th:text="|list.church}|" class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">Description</td>
+                <td th:text="|list.title}|" class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">Discount:</td>
+                <td th:text="|list.writer}|" class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">$1.00</td>
+                <td th:text="|list.date}|" class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">$ 0.10</td>
               </tr>
               <tr>
                 <td class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">Item #2</td>
@@ -189,9 +191,9 @@
     </section>
     <section class="u-align-center u-clearfix u-image u-shading u-section-3" src="" data-image-width="256" data-image-height="256" id="sec-9685">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h1 class="u-text u-text-default u-title u-text-1">INTUITIVE</h1>
-        <p class="u-large-text u-text u-text-default u-text-variant u-text-2">Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
-        <a href="#" class="u-btn u-button-style u-palette-2-base u-btn-1">Read More</a>
+        <h1 class="u-text u-text-default u-title u-text-1">모든 종교를 적나라하게</h1>
+        <p class="u-large-text u-text u-text-default u-text-variant u-text-2">종교에 대한 비판은 한국인들 사이에서 보수적으로 받아들여집니다.</p>
+        <a href="#" class="u-btn u-button-style u-palette-2-base u-btn-1">더 보기</a>
       </div>
     </section>
     <section class="u-clearfix u-section-4" id="carousel_44dc">
